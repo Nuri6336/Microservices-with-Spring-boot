@@ -1,0 +1,13 @@
+#Start with a base image containing Java runtime
+FROM eclipse-temurin:21-jdk
+
+# MAINTAINER instruction is deprecated in favor of using label
+# MAINTAINER eazybytes.com
+#Information around who maintains the image
+LABEL "org.opencontainers.image.authors"="eazybytes.com"
+
+COPY build/libs/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT ["java","-jar","accounts-0.0.1-SNAPSHOT.jar"]
+
+
